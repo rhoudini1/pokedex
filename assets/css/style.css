@@ -5,13 +5,13 @@
 }
 
 body {
-  /* padding: 5% 10% 0 10%; */
+  margin: 0 auto;
   background-color: #228cd8;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-width: 420px;
+  min-width: 400px;
 }
 
 header {
@@ -59,7 +59,7 @@ header img {
 .card {
   width: 100%;
   height: fit-content;
-  margin: 10px 0;
+  margin: 20px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -81,11 +81,13 @@ header img {
   font-weight: bold;
   color: white;
   outline: none;
+  display: inline-block;
+  margin-bottom: 10px;
 }
 
 .poke_img img {
   padding-right: 10px;
-  height: 125px;
+  max-height: 125px;
 }
 
 /* Classes for each pokemon type */
@@ -167,4 +169,66 @@ header img {
 
 .type_unknown {
   background-color: #68a090;
+}
+
+/* Tablet screen size */
+
+@media screen and (min-width: 481px) {
+  .container {
+    width: 80%;
+    display: grid;
+    grid-gap: 0 10px;
+    grid-template-columns: repeat(2, 50%);
+  }
+
+  .card {
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+
+  .poke_img img {
+    padding-right: 10px;
+    width: 100%;
+  }
+}
+
+/* Notebook screen size */
+
+@media screen and (min-width: 769px) {
+  .container {
+    width: 80%;
+    display: grid;
+    grid-gap: 0 10px;
+    grid-template-columns: repeat(3, 3fr);
+  }
+
+  .card {
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+
+  .poke_img img {
+    padding-right: 10px;
+    width: 100%;
+  }
+}
+
+/* Desktop screen size */
+@media screen and (min-width: 1280px) {
+  .container {
+    width: 80%;
+    display: grid;
+    grid-gap: 0 10px;
+    grid-template-columns: repeat(3, 3fr);
+  }
+
+  .card {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .poke_img img {
+    padding-right: 10px;
+    width: 100%;
+  }
 }

@@ -29,11 +29,14 @@ header img {
 
 .search {
   width: 80%;
+  display: flex;
+  justify-content: center;
 }
 
 .search input {
   font-size: 1.2rem;
   width: 100%;
+  max-width: 560px;
   padding: 8px;
   border-radius: 5px;
   border: 1px #0b7189 solid;
@@ -59,7 +62,7 @@ header img {
 .card {
   width: 100%;
   height: fit-content;
-  margin: 20px 0;
+  margin: 10px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -82,7 +85,6 @@ header img {
   color: white;
   outline: none;
   display: inline-block;
-  margin-bottom: 10px;
 }
 
 .poke_img img {
@@ -177,13 +179,17 @@ header img {
   .container {
     width: 80%;
     display: grid;
-    grid-gap: 0 10px;
+    grid-gap: 0 20px;
     grid-template-columns: repeat(2, 50%);
   }
 
   .card {
     flex-direction: column-reverse;
     justify-content: center;
+  }
+
+  .poke_info span {
+    margin-bottom: 10px;
   }
 
   .poke_img img {
@@ -198,13 +204,17 @@ header img {
   .container {
     width: 80%;
     display: grid;
-    grid-gap: 0 10px;
+    grid-gap: 0 20px;
     grid-template-columns: repeat(3, 3fr);
   }
 
   .card {
     flex-direction: column-reverse;
     justify-content: center;
+  }
+
+  .poke_info span {
+    margin-bottom: 10px;
   }
 
   .poke_img img {
@@ -218,7 +228,7 @@ header img {
   .container {
     width: 80%;
     display: grid;
-    grid-gap: 0 10px;
+    grid-gap: 0 20px;
     grid-template-columns: repeat(3, 3fr);
   }
 

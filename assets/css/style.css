@@ -28,18 +28,48 @@ header img {
 }
 
 .search {
+  position: relative;
   width: 80%;
-  display: flex;
-  justify-content: center;
+  max-width: 560px;
 }
 
 .search input {
   font-size: 1.2rem;
   width: 100%;
   max-width: 560px;
-  padding: 8px;
+  padding: 0.5rem;
   border-radius: 5px;
   border: 1px #0b7189 solid;
+}
+
+#autocomplete {
+  max-width: 560px;
+  width: 100%;
+  display: block;
+  position: absolute;
+  top: 2.7rem;
+  left: 0;
+  /* z-index: 10; */
+  background-color: white;
+  border-radius: 5px;
+}
+
+.search_card {
+  padding: 5px;
+  min-width: 100%;
+  max-width: 560px;
+}
+
+.search_card a {
+  text-decoration: none;
+  color: #170a1c;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.search_card p {
+  color: #888;
+  font-size: 1.2rem;
 }
 
 .pokedex {

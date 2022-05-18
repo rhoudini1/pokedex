@@ -14,6 +14,53 @@
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
+    <header>
+      <a href="index.html"
+        ><img src="assets/img/header.png" alt="Pokedex header"
+      /></a>
+    </header>
+    <main>
+      <div class="pokemon_container">
+        <div class="pokemon_img">
+          <img
+            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"
+            alt="Bulbasaur"
+          />
+        </div>
+        <div class="pokemon_info">
+          <p>No. 1</p>
+          <h2>Bulbasaur</h2>
+          <div>
+            <span class="span_border type_grass">Normal</span>
+            <span class="span_border type_poison">Poison</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pokemon_details">
+        <h2>Details</h2>
+        <div class="detail">
+          <div class="attribute">Height</div>
+          <div>5 m (12 ft.)</div>
+        </div>
+        <div class="detail">
+          <div class="attribute">Weight</div>
+          <div>60 kg (30 lb.)</div>
+        </div>
+        <div class="detail">
+          <div class="attribute">Abilities</div>
+          <div>
+            <div>1. Overgrow</div>
+            <div>2. Chlorophyll</div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <section class="nav_buttons">
+      <div class="prev_next"><a href="/pokemon.html?id=2">Previous</a></div>
+      <div class="back_btn"><a href="/index.html">Back to Pokedex</a></div>
+      <div class="prev_next"><a href="/pokemon.html?id=2">Next</a></div>
+    </section>
     <script src="js/pokemon.js"></script>
   </body>
 </html>

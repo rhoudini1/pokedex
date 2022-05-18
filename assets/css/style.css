@@ -1,0 +1,170 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  /* padding: 5% 10% 0 10%; */
+  background-color: #228cd8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 420px;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  height: 100px;
+}
+
+header img {
+  height: 100px;
+}
+
+.search {
+  width: 80%;
+}
+
+.search input {
+  font-size: 1.2rem;
+  width: 100%;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px #0b7189 solid;
+}
+
+.pokedex {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pokedex h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: aliceblue;
+}
+
+.container {
+  width: 80%;
+}
+
+.card {
+  width: 100%;
+  height: fit-content;
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: beige;
+  border-radius: 5px;
+}
+
+.poke_info {
+  padding: 0 20px;
+}
+
+.poke_info h2 {
+  margin-bottom: 10px;
+  font-size: 1.8rem;
+}
+
+.poke_info span {
+  padding: 5px;
+  font-weight: bold;
+  color: white;
+  outline: none;
+}
+
+.poke_img img {
+  padding-right: 10px;
+  height: 125px;
+}
+
+/* Classes for each pokemon type */
+.type_normal {
+  background-color: #a8a878;
+}
+
+.type_fire {
+  background-color: #f08136;
+}
+
+.type_fighting {
+  background-color: #c03028;
+}
+
+.type_water {
+  background-color: #6890f0;
+}
+
+.type_flying {
+  background-color: #a890f0;
+}
+
+.type_grass {
+  background-color: #78c850;
+}
+
+.type_poison {
+  background-color: #a153a0;
+}
+
+.type_electric {
+  background-color: #f8d03c;
+  color: #170a1c;
+}
+
+.type_ground {
+  background-color: #e0c068;
+  color: #170a1c;
+}
+
+.type_psychic {
+  background-color: #f65888;
+}
+
+.type_rock {
+  background-color: #b8a038;
+}
+
+.type_ice {
+  background-color: #705848;
+  color: #170a1c;
+}
+
+.type_bug {
+  background-color: #b9b8d0;
+}
+
+.type_dragon {
+  background-color: #797af8;
+}
+
+.type_ghost {
+  background-color: #68a090;
+}
+
+.type_dark {
+  background-color: #705848;
+}
+
+.type_steel {
+  background-color: #b9b8d0;
+  color: #170a1c;
+}
+
+.type_fairy {
+  background-color: #ee99ac;
+}
+
+.type_unknown {
+  background-color: #68a090;
+}

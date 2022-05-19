@@ -26,9 +26,6 @@ async function pokeQuery(id) {
   const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${input}`);
   const info = await response.json();
   const imgUrl = info.sprites.other["official-artwork"].front_default;
-  console.log(info.height);
-  console.log(info.weight);
-  console.log(info.abilities);
 
   // Dinamic generation of elements
   generateElements(

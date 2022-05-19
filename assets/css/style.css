@@ -61,6 +61,7 @@ header img {
 
 .search_card:hover {
   background-color: #ddd;
+  border-radius: 5px;
 }
 
 .search_card a {
@@ -110,10 +111,16 @@ header img {
 .poke_info h2 {
   margin-bottom: 10px;
   font-size: 1.8rem;
+  text-transform: capitalize;
+}
+
+.poke_info a {
+  text-decoration: none;
+  color: #170a1c;
+  cursor: pointer;
 }
 
 .poke_info div {
-  padding: 5px;
   font-weight: bold;
   color: white;
   outline: none;
@@ -131,6 +138,7 @@ header img {
 
 /* Classes for each pokemon type */
 .type_border {
+  padding: 5px;
   border-radius: 5px;
 }
 
@@ -230,7 +238,11 @@ header img {
   }
 
   .poke_info div {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
+  }
+
+  .poke_info p {
+    margin-top: 20px;
   }
 
   .poke_img img {
@@ -252,10 +264,6 @@ header img {
   .card {
     flex-direction: column-reverse;
     justify-content: center;
-  }
-
-  .poke_info div {
-    margin-bottom: 10px;
   }
 
   .poke_img img {

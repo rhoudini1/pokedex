@@ -51,3 +51,58 @@ function outputHtml(matches) {
     </div>`;
   }
 }
+
+/**
+ * INFINITE SCROLL IMPLEMENTATION
+ * with API query
+ */
+
+const container = document.getElementById("container");
+
+// INTERACTION
+getPokemons();
+
+// FUNCTIONS
+async function getPokemons() {
+  // Get request
+  const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=15");
+  const info = await response.json();
+  console.log(info.next);
+  console.log(info.results);
+  // Dinamic generation of pokemon cards
+  for (let item of info.results) {
+    const query = await fetch(item.url);
+    const result = await query.json();
+    const img = result.sprites.other["official-artwork"].front_default;
+    createPokemon(result.id, result.name, result.types, img);
+  }
+}
+
+function createPokemon(id, name, types, img) {
+  const card = document.createElement("div");
+  card.classList.add("card");
+
+  let typesHtml = "";
+  for (let item of types) {
+    typesHtml += `
+      <div class="type_border type_${item.type.name}">
+        <img src="assets/icons/${item.type.name}.svg" />
+      </div>
+    `;
+  }
+
+  card.innerHTML = `
+  <div class="poke_info">
+    <p>No. ${id}</p>
+    <a href="/pokemon.html?id=${id}"><h2>${name}</h2></a>
+    <div>
+      ${typesHtml}
+    </div>
+  </div>
+  <div class="poke_img">
+  <a href="/pokemon.html?id=${id}"><img src="${img}" alt="Bulbasaur" /></a>
+  </div>
+  `;
+
+  container.appendChild(card);
+}

@@ -63,7 +63,7 @@ header img {
 .search_card:hover {
   border-radius: 5px;
   background-color: #ddd;
-  min-width: 100%;
+  min-width: 80%;
   max-width: 560px;
 }
 

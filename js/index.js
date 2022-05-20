@@ -47,28 +47,28 @@ function outputHtml(matches) {
     autoComplete.innerHTML = html;
   } else if (matches.length == 0 && textInput.value) {
     autoComplete.innerHTML = `<div class="search_card">
-      <p>Nenhum resultado encontrado.</p>
+      <p>No results were found.</p>
     </div>`;
   }
 }
 
 /**
- * INFINITE SCROLL IMPLEMENTATION
- * with API query
+ * DINAMIC POKEMON CARDS RENDERING
  */
 
 const container = document.getElementById("container");
+let nextPage = "";
 
 // INTERACTION
-getPokemons();
+getPokemons("https://pokeapi.co/api/v2/pokemon?limit=15");
 
 // FUNCTIONS
-async function getPokemons() {
+async function getPokemons(queryUrl) {
   // Get request
-  const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=15");
+  const response = await fetch(queryUrl);
   const info = await response.json();
-  console.log(info.next);
-  console.log(info.results);
+  // Next page update
+  nextPage = info.next;
   // Dinamic generation of pokemon cards
   for (let item of info.results) {
     const query = await fetch(item.url);
@@ -100,9 +100,30 @@ function createPokemon(id, name, types, img) {
     </div>
   </div>
   <div class="poke_img">
-  <a href="/pokemon.html?id=${id}"><img src="${img}" alt="Bulbasaur" /></a>
+    <a href="/pokemon.html?id=${id}"><img src="${img}" alt="Bulbasaur" /></a>
   </div>
   `;
 
   container.appendChild(card);
+  load.classList.add("invisible");
+}
+
+/**
+ * INFINITE SCROLL IMPLEMENTATION
+ */
+
+const load = document.getElementById("load");
+
+window.addEventListener("scroll", () => {
+  if (
+    window.scrollY + window.innerHeight >=
+    document.documentElement.scrollHeight
+  ) {
+    showLoad();
+    getPokemons(nextPage);
+  }
+});
+
+function showLoad() {
+  load.classList.remove("invisible");
 }

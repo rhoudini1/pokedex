@@ -27,6 +27,10 @@ async function pokeQuery(id) {
   const info = await response.json();
   const imgUrl = info.sprites.other["official-artwork"].front_default;
 
+  // Page title
+  let capName = info.name.charAt(0).toUpperCase() + info.name.slice(1);
+  document.title = `${capName} \| Pokedex`;
+
   // Dinamic generation of elements
   generateElements(
     imgUrl,
@@ -49,8 +53,7 @@ function generateElements(imgUrl, name, id, types, height, weight, abilities) {
   // Pokemon info: id, name, types
   pokeId.textContent = `No. ${id}`;
 
-  const capName = name.charAt(0).toUpperCase() + name.slice(1);
-  pokeName.textContent = `${capName}`;
+  pokeName.textContent = `${name}`;
 
   let typesInnerHtml = "";
   for (let type of types) {

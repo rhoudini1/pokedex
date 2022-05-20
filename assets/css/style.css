@@ -12,6 +12,7 @@ body {
   justify-content: center;
   align-items: center;
   min-width: 400px;
+  padding-bottom: 30px;
 }
 
 header {
@@ -60,11 +61,14 @@ header img {
 }
 
 .search_card:hover {
-  background-color: #ddd;
   border-radius: 5px;
+  background-color: #ddd;
+  min-width: 100%;
+  max-width: 560px;
 }
 
 .search_card a {
+  margin-left: 5px;
   text-decoration: none;
   color: #170a1c;
   font-size: 1.2rem;
@@ -110,7 +114,7 @@ header img {
 
 .poke_info h2 {
   margin-bottom: 10px;
-  font-size: 1.8rem;
+  font-size: 1.7rem;
   text-transform: capitalize;
 }
 
@@ -229,7 +233,7 @@ header img {
     width: 80%;
     display: grid;
     grid-gap: 0 20px;
-    grid-template-columns: repeat(2, 50%);
+    grid-template-columns: repeat(2, 48%);
   }
 
   .card {
@@ -258,7 +262,7 @@ header img {
     width: 80%;
     display: grid;
     grid-gap: 0 20px;
-    grid-template-columns: repeat(3, 3fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .card {
@@ -278,7 +282,7 @@ header img {
     width: 80%;
     display: grid;
     grid-gap: 0 20px;
-    grid-template-columns: repeat(3, 3fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .card {
@@ -323,6 +327,7 @@ main {
 .pokemon_info h2 {
   margin-bottom: 10px;
   font-size: 2rem;
+  text-transform: capitalize;
 }
 
 #pokemon-types {
@@ -393,11 +398,11 @@ main {
 .nav_buttons div {
   width: 100%;
   margin: 5px 0;
-  padding: 10px 0;
   border-radius: 5px;
 }
 
 .nav_buttons a {
+  padding: 10px 0;
   text-decoration: none;
   font-weight: bold;
   font-size: 1.5rem;
@@ -410,8 +415,16 @@ main {
   background-color: #c19ab7;
 }
 
+.nav_buttons .prev_next:hover {
+  background-color: #c59fc0;
+}
+
 .nav_buttons .back_btn {
   background-color: #9c95dc;
+}
+
+.nav_buttons .back_btn:hover {
+  background-color: #a09adf;
 }
 
 /* Tablet screen size */
@@ -456,7 +469,7 @@ main {
   .nav_buttons {
     max-width: 960px;
     display: grid;
-    grid-template-columns: repeat(3, 3fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-gap: 10px;
   }
 
@@ -467,4 +480,8 @@ main {
 
 .hidden {
   display: hidden;
+}
+
+.invisible {
+  opacity: 0;
 }

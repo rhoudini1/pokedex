@@ -333,7 +333,7 @@ main {
 #pokemon-types {
   display: block;
   width: 100%;
-  align-items: center;
+  text-align: center;
 }
 
 .pokemon_info div {
@@ -369,13 +369,13 @@ main {
 
 .detail {
   padding: 10px 0;
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   align-items: center;
 }
 
 .attribute {
-  font-weight: bold;
+  text-align: center;
 }
 
 #abilities {
@@ -441,9 +441,6 @@ main {
     flex-direction: row-reverse;
     justify-content: space-around;
     align-items: center;
-  }
-  #pokemon-types {
-    text-align: center;
   }
 }
 

@@ -76,7 +76,7 @@ async function getPokemons(queryUrl) {
     const img = result.sprites.other["official-artwork"].front_default;
     createPokemon(result.id, result.name, result.types, img);
   }
-  load.classList.add("invisible");
+  load.classList.toggle("invisible");
 }
 
 function createPokemon(id, name, types, img) {
@@ -112,14 +112,17 @@ function createPokemon(id, name, types, img) {
  * INFINITE SCROLL IMPLEMENTATION
  */
 
-const load = document.getElementById("load");
-
-window.addEventListener("scroll", () => {
-  if (
-    window.scrollY + window.innerHeight >=
-    document.documentElement.scrollHeight
-  ) {
-    load.classList.remove("invisible");
+const loadObserver = new IntersectionObserver(
+  (entries) => {
+    const loadIcon = entries[0];
+    if (!loadIcon.isIntersecting) return;
+    load.classList.toggle("invisible");
     getPokemons(nextPage);
+  },
+  {
+    threshold: 0.5,
   }
-});
+);
+
+const load = document.getElementById("load");
+loadObserver.observe(load);

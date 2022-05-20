@@ -76,6 +76,7 @@ async function getPokemons(queryUrl) {
     const img = result.sprites.other["official-artwork"].front_default;
     createPokemon(result.id, result.name, result.types, img);
   }
+  load.classList.add("invisible");
 }
 
 function createPokemon(id, name, types, img) {
@@ -105,7 +106,6 @@ function createPokemon(id, name, types, img) {
   `;
 
   container.appendChild(card);
-  load.classList.add("invisible");
 }
 
 /**
@@ -119,11 +119,7 @@ window.addEventListener("scroll", () => {
     window.scrollY + window.innerHeight >=
     document.documentElement.scrollHeight
   ) {
-    showLoad();
+    load.classList.remove("invisible");
     getPokemons(nextPage);
   }
 });
-
-function showLoad() {
-  load.classList.remove("invisible");
-}

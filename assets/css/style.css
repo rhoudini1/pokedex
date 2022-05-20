@@ -104,7 +104,7 @@ header img {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: beige;
+  background-color: #fff;
   border-radius: 5px;
 }
 
@@ -306,7 +306,7 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: beige;
+  background-color: #fff;
   border-radius: 5px;
 }
 

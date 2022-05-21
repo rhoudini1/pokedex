@@ -120,7 +120,9 @@ const loadObserver = new IntersectionObserver(
     getPokemons(nextPage);
   },
   {
-    threshold: 0.5,
+    root: null,
+    rootMargin: "0px",
+    threshold: 1,
   }
 );
 

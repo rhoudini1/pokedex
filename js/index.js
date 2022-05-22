@@ -67,8 +67,6 @@ async function getPokemons(queryUrl) {
   // Get request
   const response = await fetch(queryUrl);
   const info = await response.json();
-  // Next page update
-  nextPage = info.next;
   // Dinamic generation of pokemon cards
   for (let item of info.results) {
     const query = await fetch(item.url);
@@ -76,6 +74,9 @@ async function getPokemons(queryUrl) {
     const img = result.sprites.other["official-artwork"].front_default;
     createPokemon(result.id, result.name, result.types, img);
   }
+  // Next page update
+  nextPage = info.next;
+  // Toggle load animation
   load.classList.toggle("invisible");
 }
 
